@@ -1,31 +1,27 @@
 ---
-title: "Aaron M. Kessler"
+title: "Giovanna Lino"
 about:
   template: jolla
   image: testimage.jpg
   links:
-    - icon: twitter
-      text: twitter
-      href: https://twitter.com/akesslerdc
+    - icon: linkedin
+      text: Linkedin
+      href: https://www.linkedin.com/in/giovannarlino/
     - icon: github
       text: Github
-      href: https://github.com/amkessler
+      href: https://github.com/giovannarlino
 ---
 
-Hi, I'm Aaron and I'm a reporter at the AP in Washington. I like data, the ocean and F1 racing. I've got two little ones and enjoy watching them grow up.
+Hi, I'm Giovanna and I'm a student at the George Washington University. I like business and finance and enjoy keeping up with fashion and italian cuisine. 
 
 ## Education
 
-University of Missouri tktktktk
-
-Columbia University
-
-Washington University in St. Louis
+B.S. Degree in International Business and Finance from the George Washington University 
 
 ## Skills
 
 Reporting and Writing
 
-Data Analysis
+Business Valuation 
 
-FOIA laws
+Marketing strategy 
