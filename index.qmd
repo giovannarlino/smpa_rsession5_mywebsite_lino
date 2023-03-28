@@ -2,7 +2,7 @@
 title: "Giovanna Lino"
 about:
   template: jolla
-  image: testimage.jpg
+  image: myphoto.jpeg
   links:
     - icon: linkedin
       text: Linkedin

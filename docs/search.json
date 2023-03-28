@@ -1,19 +1,5 @@
 [
   {
-    "objectID": "portfolio.html",
-    "href": "portfolio.html",
-    "title": "Portfolio",
-    "section": "",
-    "text": "Hi there this is my portfolio page! Yay…\nHere’s another line for good measure."
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "More Stuff About Me",
-    "section": "",
-    "text": "About this site\nHere is some new stuff!\n\n1 + 1 \n\n[1] 2"
-  },
-  {
     "objectID": "walkthrough.html",
     "href": "walkthrough.html",
     "title": "Analysis Walkthrough Example",
@@ -40,5 +26,19 @@
     "title": "Giovanna Lino",
     "section": "Skills",
     "text": "Skills\nReporting and Writing\nBusiness Valuation\nMarketing strategy"
+  },
+  {
+    "objectID": "portfolio.html",
+    "href": "portfolio.html",
+    "title": "Portfolio",
+    "section": "",
+    "text": "Hi there this is my portfolio page! Yay…\nHere’s another line for good measure."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "More Stuff About Me",
+    "section": "",
+    "text": "About this site\nHere is some new stuff!\n\n1 + 1 \n\n[1] 2"
   }
 ]
