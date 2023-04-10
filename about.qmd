@@ -1,13 +1,10 @@
 ---
-title: "More Stuff About Me"
+title: "About Me"
 ---
 
-About this site  
-  
-Here is some new stuff!
+This website showcases some of my works during my time studying at GW. 
 
 ```{r}
-1 + 1 
 
 
 ```

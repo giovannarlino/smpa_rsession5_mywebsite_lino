@@ -16,6 +16,9 @@ website:
       - about.qmd
       - portfolio.qmd
       - walkthrough.qmd
+      - censusmap.qmd
+      - newsstory.qmd
+      - papers.qmd
       
 
 
