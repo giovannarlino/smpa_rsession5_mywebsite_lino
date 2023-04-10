@@ -1,3 +1,91 @@
 ---
 title: "Census Map"
+author: "Giovanna Lino"
 ---
+
+## **Introduction**
+
+In this walkthrough, I will demonstrate how to create an interactive county census map of a chosen state using R. Specifically, I will be using the **`tidycensus`** package to download census data from the American Community Survey and the **`tmap`** and **`mapview`** packages to create the interactive map.
+
+I have chosen the state of Texas and will be mapping the percentage of individuals over the age of 25 with a bachelor's degree or higher.
+
+## **Step 1: Install Packages**
+
+First, make sure you have the necessary packages installed and loaded. In this case I have used the following packages:
+
+```{r}
+
+install.packages("tidycensus")
+install.packages("tmap")
+install.packages("mapview")
+
+# Load packages
+library(tidycensus)
+library(tmap)
+library(mapview)
+library(dplyr)
+
+```
+
+## **Step 2: Set up Census API Key**
+
+To download data from the American Community Survey using the **`tidycensus`** package, you need to set up a Census API key.
+
+With the API key,set it up in R using the following code:
+
+```{r}
+# Census API key
+#Retrived from the API Link on their page 
+census_api_key("75fa32dac9122cf2c43fb6e5d0ed1e7ead626185")
+
+```
+
+## **Step 3: Download Census Data**
+
+Download the census data for Texas using the **`tidycensus`** package. Specifically, we will be downloading the percentage of individuals over the age of 25 with a bachelor's degree or higher.
+
+```{r}
+
+# Download census data
+tx_census <- get_acs(
+  geography = "county",
+  variables = "B15003_022",
+  state = "TX",
+  survey = "acs5",
+  year = 2019)
+
+```
+
+## **Step 4: Join Census Data with Spatial Data**
+
+Now, join the census data with spatial data for Texas counties. We will be using the **`tigris`** package to get the county shapefiles and join them with the census data using the **`left_join`** function.
+
+```{r}
+
+# Load tigris package
+library(tigris)
+
+# Texas county shapefiles
+tx_counties <- counties(state = "TX", cb = TRUE)
+
+# Join census data with spatial data
+tx_map_data <- left_join(tx_counties, tx_census, by = c("NAME" = "NAME"))
+```
+
+## **Step 5: Create Choropleth Map**
+
+Create a choropleth map of our data using the **`tmap`** package.
+
+```{r}
+
+tm_shape(tx_map_data) +
+  tm_polygons(variables = "B15003_022",
+              col = "grey", 
+              border.col = "black",
+              style = "quantile",
+              palette = "Blues",
+              title = "Percentage of Individuals with more than 25 with Bachelor's Degree or Higher") +
+  tm_layout(main.title = "Texas Counties",
+            legend.outside = TRUE)
+
+```

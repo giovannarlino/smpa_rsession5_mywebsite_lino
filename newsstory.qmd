@@ -1,5 +1,6 @@
 ---
 title: "News Story"
+author: "Giovanna Lino"
 ---
 
 Article published in the George Magazine for the GW Fashion Business Association. The articles talks about the luxury brand Burberry and its strategies on dealing with sustainability and ESG metrics in a more connected world.

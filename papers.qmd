@@ -1,5 +1,6 @@
 ---
 title: "Papers"
+author: "Giovanna Lino"
 ---
 
 This is a paper I have written when I took the course called Introduction to International Politics (PSC-1003) at the George Washington University with Professor Downes in 2020. The argument revolves around the bargaining model of countries when they go to war and their negotiations methodologies and techniques. Furthermore, the paper explores the trade offs of those methodologies.

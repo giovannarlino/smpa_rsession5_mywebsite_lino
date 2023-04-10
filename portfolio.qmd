@@ -4,4 +4,4 @@ title: "Portfolio"
 
 Hi there this is my portfolio page! Yay...
 
-This is an example of one of my [works](https://www.linkedin.com) during my time at GW.
+This [page](https://www.linkedin.com/in/giovannarlino/) showcases some of my works during my time at GW.
