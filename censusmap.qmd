@@ -52,7 +52,8 @@ tx_census <- get_acs(
   variables = "B15003_022",
   state = "TX",
   survey = "acs5",
-  year = 2019)
+  year = 2019,
+  geometry = TRUE)
 
 ```
 
@@ -78,9 +79,8 @@ Create a choropleth map of our data using the **`tmap`** package.
 
 ```{r}
 
-tm_shape(tx_map_data) +
-  tm_polygons(variables = "B15003_022",
-              col = "grey", 
+tm_shape(tx_census) +
+  tm_polygons("estimate",
               border.col = "black",
               style = "quantile",
               palette = "Blues",
