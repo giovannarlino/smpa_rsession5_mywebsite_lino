@@ -69,8 +69,6 @@ library(tigris)
 # Texas county shapefiles
 tx_counties <- counties(state = "TX", cb = TRUE)
 
-# Join census data with spatial data
-tx_map_data <- left_join(tx_counties, tx_census, by = c("NAME" = "NAME"))
 ```
 
 ## **Step 5: Create Choropleth Map**

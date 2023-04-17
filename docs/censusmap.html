@@ -171,6 +171,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <a class="nav-link" href="./papers.html">
  <span class="menu-text">Papers</span></a>
   </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./virginiaelectionresults.html">
+ <span class="menu-text">Virginia Election Project</span></a>
+  </li>  
 </ul>
               <div id="quarto-search" class="" title="Search"></div>
           </div> <!-- /navcollapse -->
@@ -289,26 +293,13 @@ Attaching package: 'dplyr'</code></pre>
 <span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">variables =</span> <span class="st">"B15003_022"</span>,</span>
 <span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">state =</span> <span class="st">"TX"</span>,</span>
 <span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">survey =</span> <span class="st">"acs5"</span>,</span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">year =</span> <span class="dv">2019</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">year =</span> <span class="dv">2019</span>,</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">geometry =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Getting data from the 2015-2019 5-year ACS</code></pre>
 </div>
-</div>
-</section>
-<section id="step-4-join-census-data-with-spatial-data" class="level2">
-<h2 class="anchored" data-anchor-id="step-4-join-census-data-with-spatial-data"><strong>Step 4: Join Census Data with Spatial Data</strong></h2>
-<p>Now, join the census data with spatial data for Texas counties. We will be using the <strong><code>tigris</code></strong> package to get the county shapefiles and join them with the census data using the <strong><code>left_join</code></strong> function.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load tigris package</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tigris)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>To enable caching of data, set `options(tigris_use_cache = TRUE)`
-in your R script or .Rprofile.</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Texas county shapefiles</span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>tx_counties <span class="ot">&lt;-</span> <span class="fu">counties</span>(<span class="at">state =</span> <span class="st">"TX"</span>, <span class="at">cb =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Retrieving data for the year 2021</code></pre>
+<pre><code>Downloading feature geometry from the Census website.  To cache shapefiles for use in future sessions, set `options(tigris_use_cache = TRUE)`.</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
@@ -321,33 +312,147 @@ in your R script or .Rprofile.</code></pre>
   |                                                                            
   |=                                                                     |   2%
   |                                                                            
+  |==                                                                    |   2%
+  |                                                                            
+  |==                                                                    |   3%
+  |                                                                            
+  |==                                                                    |   4%
+  |                                                                            
+  |===                                                                   |   4%
+  |                                                                            
   |===                                                                   |   5%
+  |                                                                            
+  |====                                                                  |   5%
   |                                                                            
   |====                                                                  |   6%
   |                                                                            
   |=====                                                                 |   7%
   |                                                                            
-  |=======                                                               |   9%
+  |=====                                                                 |   8%
+  |                                                                            
+  |======                                                                |   8%
+  |                                                                            
+  |======                                                                |   9%
+  |                                                                            
+  |=======                                                               |  10%
   |                                                                            
   |========                                                              |  12%
   |                                                                            
-  |=========                                                             |  13%
+  |===========                                                           |  15%
   |                                                                            
-  |==========                                                            |  14%
+  |=============                                                         |  19%
+  |                                                                            
+  |================                                                      |  22%
+  |                                                                            
+  |==================                                                    |  26%
+  |                                                                            
+  |=====================                                                 |  30%
+  |                                                                            
+  |=======================                                               |  33%
+  |                                                                            
+  |==========================                                            |  37%
+  |                                                                            
+  |===========================                                           |  39%
+  |                                                                            
+  |=============================                                         |  42%
+  |                                                                            
+  |===============================                                       |  44%
+  |                                                                            
+  |=================================                                     |  47%
+  |                                                                            
+  |===================================                                   |  51%
+  |                                                                            
+  |====================================                                  |  51%
+  |                                                                            
+  |======================================                                |  55%
+  |                                                                            
+  |=========================================                             |  58%
+  |                                                                            
+  |===========================================                           |  62%
+  |                                                                            
+  |==============================================                        |  66%
+  |                                                                            
+  |================================================                      |  69%
+  |                                                                            
+  |===================================================                   |  73%
+  |                                                                            
+  |=====================================================                 |  76%
+  |                                                                            
+  |========================================================              |  80%
+  |                                                                            
+  |==========================================================            |  84%
+  |                                                                            
+  |=============================================================         |  87%
+  |                                                                            
+  |================================================================      |  91%
+  |                                                                            
+  |==================================================================    |  94%
+  |                                                                            
+  |===================================================================== |  98%
+  |                                                                            
+  |======================================================================| 100%</code></pre>
+</div>
+</div>
+</section>
+<section id="step-4-join-census-data-with-spatial-data" class="level2">
+<h2 class="anchored" data-anchor-id="step-4-join-census-data-with-spatial-data"><strong>Step 4: Join Census Data with Spatial Data</strong></h2>
+<p>Now, join the census data with spatial data for Texas counties. We will be using the <strong><code>tigris</code></strong> package to get the county shapefiles and join them with the census data using the <strong><code>left_join</code></strong> function.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load tigris package</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tigris)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>To enable caching of data, set `options(tigris_use_cache = TRUE)`
+in your R script or .Rprofile.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Texas county shapefiles</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>tx_counties <span class="ot">&lt;-</span> <span class="fu">counties</span>(<span class="at">state =</span> <span class="st">"TX"</span>, <span class="at">cb =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Retrieving data for the year 2021</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+  |                                                                            
+  |                                                                      |   0%
+  |                                                                            
+  |==                                                                    |   3%
+  |                                                                            
+  |===                                                                   |   5%
+  |                                                                            
+  |====                                                                  |   5%
+  |                                                                            
+  |=====                                                                 |   7%
+  |                                                                            
+  |=====                                                                 |   8%
+  |                                                                            
+  |======                                                                |   8%
+  |                                                                            
+  |======                                                                |   9%
+  |                                                                            
+  |=======                                                               |   9%
+  |                                                                            
+  |=========                                                             |  13%
   |                                                                            
   |===========                                                           |  16%
   |                                                                            
   |=============                                                         |  18%
   |                                                                            
-  |===============                                                       |  22%
+  |=============                                                         |  19%
   |                                                                            
-  |==================                                                    |  25%
+  |==============                                                        |  20%
   |                                                                            
-  |====================                                                  |  29%
+  |==============                                                        |  21%
   |                                                                            
-  |=======================                                               |  32%
+  |=================                                                     |  24%
+  |                                                                            
+  |===================                                                   |  27%
+  |                                                                            
+  |======================                                                |  31%
+  |                                                                            
+  |========================                                              |  34%
   |                                                                            
   |=========================                                             |  36%
+  |                                                                            
+  |==========================                                            |  36%
   |                                                                            
   |===========================                                           |  38%
   |                                                                            
@@ -361,29 +466,25 @@ in your R script or .Rprofile.</code></pre>
   |                                                                            
   |==================================                                    |  49%
   |                                                                            
+  |===================================                                   |  50%
+  |                                                                            
   |====================================                                  |  51%
   |                                                                            
-  |=====================================                                 |  54%
+  |======================================                                |  55%
   |                                                                            
-  |======================================                                |  54%
+  |=========================================                             |  58%
   |                                                                            
-  |========================================                              |  57%
+  |=========================================                             |  59%
   |                                                                            
-  |===========================================                           |  61%
+  |==========================================                            |  60%
   |                                                                            
   |=============================================                         |  64%
   |                                                                            
-  |=============================================                         |  65%
-  |                                                                            
   |===============================================                       |  67%
-  |                                                                            
-  |=================================================                     |  70%
   |                                                                            
   |==================================================                    |  71%
   |                                                                            
-  |==================================================                    |  72%
-  |                                                                            
-  |===================================================                   |  73%
+  |====================================================                  |  74%
   |                                                                            
   |=====================================================                 |  76%
   |                                                                            
@@ -391,39 +492,48 @@ in your R script or .Rprofile.</code></pre>
   |                                                                            
   |========================================================              |  80%
   |                                                                            
-  |==========================================================            |  82%
-  |                                                                            
   |===========================================================           |  84%
   |                                                                            
-  |============================================================          |  85%
+  |===========================================================           |  85%
   |                                                                            
   |=============================================================         |  87%
   |                                                                            
-  |===============================================================       |  90%
+  |==============================================================        |  89%
+  |                                                                            
+  |===============================================================       |  89%
+  |                                                                            
+  |================================================================      |  91%
+  |                                                                            
+  |================================================================      |  92%
+  |                                                                            
+  |=================================================================     |  92%
+  |                                                                            
+  |=================================================================     |  93%
   |                                                                            
   |==================================================================    |  94%
   |                                                                            
-  |====================================================================  |  97%
+  |===================================================================   |  96%
+  |                                                                            
+  |====================================================================  |  98%
+  |                                                                            
+  |===================================================================== |  98%
   |                                                                            
   |======================================================================| 100%</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Join census data with spatial data</span></span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>tx_map_data <span class="ot">&lt;-</span> <span class="fu">left_join</span>(tx_counties, tx_census, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"NAME"</span> <span class="ot">=</span> <span class="st">"NAME"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="step-5-create-choropleth-map" class="level2">
 <h2 class="anchored" data-anchor-id="step-5-create-choropleth-map"><strong>Step 5: Create Choropleth Map</strong></h2>
 <p>Create a choropleth map of our data using the <strong><code>tmap</code></strong> package.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(tx_map_data) <span class="sc">+</span></span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_polygons</span>(<span class="at">variables =</span> <span class="st">"B15003_022"</span>,</span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>              <span class="at">col =</span> <span class="st">"grey"</span>, </span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>              <span class="at">border.col =</span> <span class="st">"black"</span>,</span>
-<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>              <span class="at">style =</span> <span class="st">"quantile"</span>,</span>
-<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>              <span class="at">palette =</span> <span class="st">"Blues"</span>,</span>
-<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>              <span class="at">title =</span> <span class="st">"Percentage of Individuals with more than 25 with Bachelor's Degree or Higher"</span>) <span class="sc">+</span></span>
-<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_layout</span>(<span class="at">main.title =</span> <span class="st">"Texas Counties"</span>,</span>
-<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>            <span class="at">legend.outside =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tm_shape</span>(tx_census) <span class="sc">+</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_polygons</span>(<span class="st">"estimate"</span>,</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>              <span class="at">border.col =</span> <span class="st">"black"</span>,</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>              <span class="at">style =</span> <span class="st">"quantile"</span>,</span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>              <span class="at">palette =</span> <span class="st">"Blues"</span>,</span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>              <span class="at">title =</span> <span class="st">"Percentage of Individuals with more than 25 with Bachelor's Degree or Higher"</span>) <span class="sc">+</span></span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_layout</span>(<span class="at">main.title =</span> <span class="st">"Texas Counties"</span>,</span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>            <span class="at">legend.outside =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="censusmap_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="672"></p>
 </div>

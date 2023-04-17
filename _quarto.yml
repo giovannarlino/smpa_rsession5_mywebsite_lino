@@ -19,6 +19,8 @@ website:
       - censusmap.qmd
       - newsstory.qmd
       - papers.qmd
+      - virginiaelectionresults.qmd
+      
       
 
 

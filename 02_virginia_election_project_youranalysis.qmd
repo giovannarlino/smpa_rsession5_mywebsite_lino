@@ -1,0 +1,67 @@
+---
+title: "Virginia Election Project"
+author: "Giovanna Lino"
+execute:
+  echo: true
+format:
+  html:
+    self-contained: true
+    code-tools: true
+---
+
+
+```{r setup, include=FALSE, warning=FALSE, message=FALSE}
+
+
+library(tidyverse)
+library(janitor)
+library(kableExtra)
+library(here)
+options(scipen = 999)
+options(stringsAsFactors = FALSE)
+
+
+#load saved joined data file from previous script
+joined_vacomparison <- readRDS(here("processed_data", "joined_vacomparison.rds"))
+
+
+
+```
+
+
+# Comparing Virgnia Gov vs. Prez
+
+
+
+```{r}
+
+head(joined_vacomparison)
+
+
+```
+
+```{r}
+#what is the average democratic percentage for both presidential and government election in Accomack County? 
+
+joined_vacomparison %>% 
+  filter(locality == "ACCOMACK COUNTY" ) %>% 
+  group_by(biden_pct, pct_mcauliffe) %>% 
+  summarise(average = mean(biden_pct)) %>% 
+  arrange(desc(average))
+  
+
+```
+```{r}
+#create a map of the republican vote in all of the counties for both president and governor 
+
+#analyze the counties with the biggest democratic victory 
+
+#analyze the counties with the biggest republican victory 
+
+#was there a county in which Biden won for which the democratic governor didn't?
+
+
+
+
+
+```
