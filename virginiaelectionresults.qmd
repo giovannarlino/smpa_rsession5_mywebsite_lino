@@ -378,10 +378,58 @@ joined_vacomparison %>%
 
 ```
 
-# **Possible questions to be asked based on the data:**
+# **Additional analysis from the data:**
 
-1.  Analyze the counties with the biggest Democratic victory.
+1.  **Calculate the Presidential Democratic vote margin and sort by largest margin:**
 
-2.  Analyze the counties with the biggest Republican victory.
+```{r}
 
-3.  Was there a county in which Biden won for which the Democratic governor didn't?
+dem_counties <- joined_vacomparison %>% 
+mutate(dem_margin = biden_pct - trump_pct) %>% 
+arrange(desc(dem_margin))
+
+```
+
+```{r}
+# Show the top 10 counties with the largest Democratic victory
+
+head(dem_counties, 10)
+
+```
+
+2.  **Calculate the Presidential Republican vote margin and sort by largest margin:**
+
+```{r}
+
+rep_counties <- joined_vacomparison %>% 
+mutate(rep_margin = trump_pct - biden_pct) %>% 
+arrange(desc(rep_margin))
+
+```
+
+```{r}
+# Show the top 10 counties with the largest Republican victory
+
+head(rep_counties, 10)
+
+```
+
+3.  **Find any county where Biden won but the Democratic governor didn't:**
+
+```{r}
+
+# subset the data frame to include only counties where Biden won
+biden_counties <- subset(joined_vacomparison, biden_pct > pct_mcauliffe)
+
+# subset the data frame to include only counties where McAuliffe won
+mcauliffe_counties <- subset(joined_vacomparison, pct_mcauliffe > biden_pct)
+
+# find the counties where Biden won but McAuliffe didn't
+biden_only_counties <- subset(biden_counties, pct_mcauliffe == 0)
+
+# print the county names
+print(biden_only_counties)
+
+#In this case, I found that all counties that Biden won, Mcauliffe also won. 
+
+```

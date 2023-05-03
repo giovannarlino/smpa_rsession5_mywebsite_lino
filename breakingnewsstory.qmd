@@ -1,24 +1,57 @@
 ---
 title: "Breaking News Story Sample"
 author: "Giovanna Lino"
+date: "`r format(Sys.time(), '%B %d, %Y')`"
+format:
+  html:
+    self-contained: true
+    toc: true
+    toc-location: left
 ---
 
-Data: 
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(tidyverse)
+library(here)
+```
 
 ```{r}
 
-eight_cylinder_cars <- mtcars %>% 
-  filter(cyl == 8) %>% 
-  nrow()
+# Loading the datasets
+counties_demographics <- readRDS(here("counties_demographics.rds"))
+counties_elexresults <- readRDS(here("counties_elexresults.rds"))
 
 ```
 
-There are `r eight_cylinder_cars` lessons to be learned from the invasion of Ukraine. 
+```{r}
 
-"The election today resulted in \_\_\_ counties being won by the Republican candidate"
+# By joining both datasets, I am grouping/summarizing to calculate the mean pct of Trump 2020 vote by counties above or below the national average for people who identify as nonwhite.  
 
-A new page featuring a sample "breaking news story" that is approximately 250 words and which features at least two pieces of information which are generated using inline R code within your Quarto document. In other words, an example would be "The election today resulted in \_\_\_ counties being won by the Republican candidate" where the \_\_ is filled in on the fly by your inline R code. Note that to accomplish this your Quarto document will have to include the necessary R code chunks above to create the text or number objects you will insert into those spaces.
+nonwhite_voters_average <- inner_join(counties_elexresults, counties_demographics) %>% 
+  group_by(pct_race_nonwhite_abovebelow_natl) %>% 
+  summarise(average = mean(pct_r_2020))
 
-\
-Note that this is an example story you are writing - it can be based off of any dataset you choose to use, either one we've used previously or another you find. All elements needed to complete the code and the narrative must be part of your Quarto document, so whatever dataset you choose will need to be imported into the file at the top, etc, and then crunched appropriately to arrive at the number.\
-To take a single value in a dataframe and convert it to a vector, you can use the pull() function if need be.
+nonwhite_voters_average
+
+
+```
+
+```{r}
+
+#group/summarize to calculate the mean pct of Trump 2020 vote by counties above or below the national average for college graduates (`pct_ed_college_all_abovebelow_natl`).
+
+inner_join(counties_elexresults, counties_demographics) %>% 
+  group_by(pct_ed_college_all_abovebelow_natl) %>% 
+  summarise(average = mean(pct_r_2020))
+```
+
+#  \# `r nonwhite_voters_average` of Trump's voters are part of the counties above national average for people who identify as nonwhite.
+
+In the aftermath of the 2020 Presidential campaign, both the results of the election and the demographics of the voter pool of each county were analyzed for both the Republican candidate Donald Trump and the Democratic candidate Joe Biden. Particularly, Trump's mean percentage of votes by U.S. counties was analyzed for both the number of nonwhite voters and the number of college graduates and if they were above or below the national U.S. average.
+
+It comes as a surprise that more than `r nonwhite_voters_average` of Trump's voters are part of the counties above the national average for people who identify as nonwhite, while approximately 68% of votes are part of counties below the national average for non white-identified people. Furthermore, on average, `pct_ed_college_all_abovebelow_natl` of Trump's votes come from counties with people above the national average for college graduates, versus 68% below the national average for college graduates.
+
+These results come as a surprise since it is known that the Democratic party has the majority of college graduate and nonwhite votes. Although this is still the case, the Democratic party cannot solely rely on these metrics to ensure victory since more college graduates and nonwhite voters are increasing their support for the Republican party.
+
+This trend can be seen in states such as Texas. Some working-class Hispanics do not feel completely represented by the Democratic party in the last gubernatorial race in November, 2022. The Democratic candidate, Beto O'Rourke is a citizen of El Paso and has been called out by activists from the organization Sunrise El Paso for not supporting them in their fight against the privatization of their electric companies. The city of El Paso is not on the Texas electrical grid, allowing for the company J.P Morgan to privatize it and charge expensive bills. Representatives of Sunrise El Paso claim that O'Rourke is too much of a Central Democrat and does not want to compromise the funding of his campaign by selecting fights with big corporations.
