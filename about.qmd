@@ -2,9 +2,8 @@
 title: "About Me"
 ---
 
-This website showcases some of my works during my time studying at GW. 
+Hello! My name is Giovanna Romariz Lino. I am 22 years old and I am originally from Londrina, Brazil. I have just graduated from George Washington University with a Bachelor of Science degree in Business with a double concentration in International Business and Finance and a minor in Journalism and Mass Communications. During university, I have held leadership roles in the Brazilian Student Association, Alpha Kappa Psi Business Fraternity, the GW Socially Responsible Fund, among others. I have spent 4 years living in Washington D.C., and I have also studied abroad in Milan, Italy, at Bocconi University during Spring, 2022. During my life, I have also lived in Canada, and done summer exchanges in the United States while I was in high school. I speak fluent English, Portuguese, intermediate Spanish, and basic Italian. I am an only child and my parents still live in Brazil.
 
-```{r}
+During my time at university, I have interned in more than four companies in Brazil focused on finance and marketing. I have also participated in consulting projects in Washington D.C. My main focuses of work following graduation are on consulting and finance. Now, I am moving to New York in July, 2023, and joining Alphasights as an Associate working under their Consulting department.
 
-
-```
+If you want to know more about my professional experience, you can read my [resume.](https://docs.google.com/document/d/1cv7g5l-lgJfpHSnO49QV12rrD57OgwzQ/edit?usp=sharing&ouid=116938803250525408172&rtpof=true&sd=true)

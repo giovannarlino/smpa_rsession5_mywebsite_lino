@@ -1,7 +1,63 @@
 ---
 title: "Portfolio"
+author: "Giovanna Lino"
 ---
 
-Hi there this is my portfolio page! Yay...
+Welcome to my portfolio. Additional past works are included in this [page](https://www.linkedin.com/in/giovannarlino/), which takes you to my Linkedln. profile.
 
-This [page](https://www.linkedin.com/in/giovannarlino/) showcases some of my works during my time at GW.
+# **GWFBA** 
+
+Articles published in the *George Magazine* for the **GW Fashion Business Association**.
+
+## **Burberry: the brand\'s dilemma with sustainability**
+
+*December, 2020*
+
+   The fashion industry is the second largest polluter in the world and consumers are becoming more aware of this. There has been a push to prioritize companies that acknowledge the value of sustainability, and hesitation to support those that fail to address it. Sustainability is a primary concern for consumers and in order for companies to continue to optimize their sales and remain relevant, their designers and managers must address the topic immediately.
+
+   When it comes to sustainability, companies have different opinions. On one hand, some argue that becoming sustainable is too costly and not worth the effort. While on the other hand, some brands view this extra cost as something that will be compensated by new clientele. However, it seems that the vast majority of Millenial, Gen X, Gen Z consumers believe that sustainability is a significant issue and that it should be addressed in the fashion industry. 
+
+   With the influx of these concerned consumers, brands must adjust their strategies and undertake the topic of sustainability to stay competitive. For example, in the luxury fashion industry, fur has always been an important medium. In recent years, there has been a decrease in demand for the luxurious animal by product because there is a heightened awareness of the detrimental effects of the fur industry. For that reason, some designers are beginning to swap fur for something faux. In my opinion, this shift is beneficial and will have a positive impact on a luxury brand\'s reputation.
+
+   One high end brand that is highly invested in sustainability is Burberry, the British fashion house created in 1865 by Thomas Burberry. The company proved to be unique in the high fashion market when Thomas created Gabardine, a \'breathable, weatherproof and hardwearing fabric revolutionising rainwear\'. Also adding to the originality of the brand is Thomas Burberry\'s creation of the iconic pattern-based scarves, purses, and trench coats. In 2017, when the company\'s annual report was released, environmental activists protested the brand because it had burned almost \$29 million dollars of unsold inventory in a year. With the major repercussion of the brand\'s lack of sustainability commitment, social media backlash, the movement #Burnberry arose to demand change. The protests proved to be effective since Burberry is now dedicated to improving sustainability inside the company.
+
+   As of now, the brand uses 58% of its energy and 68% of its electricity from clean energy sources and Burberry plans to stay committed to sustainability in the future. The brand has made several promises to become more sustainable for 2022. For instance, Burberry has committed to stopping the use of real fur and burning unwanted items, become carbon neutral by 2022, and operate entirely by renewable energy. In addition, Burberry has released a \'Responsibility Agenda\' to set goals for increasing sustainability within the company. The agenda focuses on three areas: product, company, and communities. Each area is centered on achieving progress by making the brand\'s product more recyclable, ridding the practice of burning unsaleable products, and impacting teachers and students by increasing mentoring programs in developing regions.
+
+   The \'Responsibility Agenda\' goals abides with the Paris Climate Agreement and the UN\'s 17 Sustainable Development Goals. Burberry committed to becoming a 100% renewable energy run company, and to create a Manufacturing Excellence Program focused on enhancing worker wellbeing in the company\'s supply chain. The brand has been recognized with two awards for its sustainable fashion approach: Leading luxury brand in the \'Textiles, Apparel & Luxury Goods\' sector by the DJSI 2018, and \'Bronze Class\' in RobecoSAM\'s 2018 Sustainability Yearbook.
+
+   Furthermore, Burberry established partnerships aimed at increasing sustainability. First, Burberry collaborated with Elvis & Kresse, a sustainable company devoted to rescuing raw materials and transforming it into luxury accessories, to make 120 tons of wasted leather fabric into selling products. Second, the brand has launched a capsule collection made from Econyl, sustainable nylon made from regenerated fishing nets, fabric scraps and industrial plastic, developing a way to combat plastic waste while creating a circular fashion filled with luxury products.
+
+   Burberry is one example of a company that suffered political turmoil due to its unsustainable approaches to fashion. Now, the brand is fixing the problem by collaborating with sustainable brands, becoming more transparent with its consumers and stakeholders, and setting goals to increase sustainability at the company. My hope is that Burberry becomes an example for other haute couture to follow.
+
+## **Psychedelic Patterns** 
+
+*October, 2021*
+
+\
+   Fashion is always trying to reinvent itself. During the pandemic, various fashion trends were revived. One in particular was psychedelic patterns. Inspired by the 70s, this type of print was first popularized by counterculture teenagers in the midst of social and political turmoil. The 'LSD fabric' made of colorful lines refers to a 'hallucinogenic\'' pattern that became the inspiration for other psychedelic shapes, and made it possible for the pattern to be produced quickly and appear as a 'groovy' style in movies. These patterns are known for their bold colors, sinuous lines and natural shapes.  
+
+   In 2021, with the use of social media, this style is back in action. Tie dye is one of the most popular psychedelic patterns that has been revived. According to the trend-forecasting company Heuritech, during this Winter season, tie dye trends are expected to increase more than 6% when compared to previous seasons.  High end brands, along with local boutiques, have embraced this sense of nostalgia and have created collections based on this style. Brands such as Tom Ford, Collina Strada, Lecavalier, and Raf Simons have embraced the tie dye and other psychedelic prints in their Spring/Summer 2021 collections. 
+
+   Raf Simons used colorblocked and defined swirls. The collection was named 'Teenage Dreams' inspired by the 1979 film Hair, which resembles the feeling of uncertainty and change that people are living nowadays. The pandemic has had a major impact on the return of the psychedelic. Dennis Nothdruft, head of exhibitions in the Fashion & Textile Museum in London, said that there is a feeling  of civil unrest and change that correlates with the use of different prints. There is nothing more 'youth revolt' than what occurred in the 70s and the current moment we are facing. With the return of these prints, there is an evocation for community and participation, providing sensory experiences to the fashion community. 
+
+   One fashion commentator said that during the pandemic, people got used to looking at social media all the time. For a brand to stand out, it requires a creative collection, and nifty patterns are a way to achieve that. Ideally, a user would stop scrolling and wonder more about the brand when coming across a stylish psychedelic pattern dress. Psychedelic patterns are here to bring back that sense of revolt and freedom that people need in 2021, a freedom that is colorful and bold. 
+
+## **Fashion reinvention - Rihanna vs. Savage X Fenty**
+
+*October, 2020*
+
+   On September 30, 2020, Rihanna showed her newest Savage X Fenty collection to all fashion lovers. Known for having an open and liberal approach to the fashion industry, Rihanna delivered a fashion show filled with diversity and inclusion, with models who identified as men, women, non-binary, and celebrities models as Paris Hilton, Lizzo, Bella Hadid, Normani, Cara Delavigne, Shea Couleé, among many others.  
+
+   Rihanna started to add to the diversity conversation in fashion when she launched Fenty in 2017, being the first woman of color to be added to the LVMH group. From then, she started to portray diversity and body acceptance in all of her collections and fashion shows, and the 2020 fashion show was no different.
+
+   During the pandemic, people started to question the meaning of traditional fashion, and how can the industry be more inclusive. Quarantine gave people a lot of time to think about this aspect, giving more freedom to reinvent the industry and history of fashion shows. Rihanna was one of the designers who invested in this topic and brought to the public a fashion show that empowered people\'s sexuality and encouraged all to take ownership and pride of their bodies when using lingeries. 
+
+   By taking this inclusive approach, Rihanna impacts not only the fashion industry, but also millions of followers, fans, and consumers who can now envision themselves in all Savage X Fenty lingeries. They feel represented, and that is key for both sales success, and, most importantly, for the reinvention of the fashion industry. Furthermore, it is necessary to understand that the show is not simply a marketing strategy. Rihanna once stated, "I want to make stuff that I can see on the people that I know and they come in all different shapes, sizes, races, religions." It is a part of who she is, and her brand showcases that. Therefore, it is more than just an opportunity taken to increase sales by jumping on a trending moment of body acceptance. It actually is the core value of the brand and of the designer. 
+
+   Another concept incorporated in this show was a virtual theatrical experience. If you watched it, you know that the show was filled with dancers and performances. This unique model enhanced the powerfulness of the show when portraying diversity of genders, races, body heights, and weights. It was a very creative approach in comparison to regular fashion shows, especially when it is important to keep consumers\' attention to the show now that it has a virtual format. The performance is available on Amazon prime. It is shocking how a year ago this was never considered a possibility, and now, it's the new norm. 
+
+   In a world where Victoria Secrets\' scandal showed that there is still low tolerance when it comes to diversifying lingerie models in the runways, Rihanna questions this status quo with the release of her 2020 Savage X Fenty collection, and does that by capturing its public with an incredible virtual experience!
+
+\
+
+\

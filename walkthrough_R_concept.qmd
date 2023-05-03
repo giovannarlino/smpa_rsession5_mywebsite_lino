@@ -1,0 +1,113 @@
+---
+title: " Walkthrough"
+format:
+  html:
+    self-contained: true
+---
+
+Here, I am going to walk you through the steps of loading your packages and dataframe, and using functions such as *filter, group_by, mutate and summarise*. 
+
+First, I am loading the data and running the code below to create a dataframe called 'impeach'. This dataframe contains a row for every House Democrat and whether the member publicly called for impeachment in the case of the *first* Trump impeachment. There are also other data included related to each politician's district. 
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+# Load the packages we'll need
+library(tidyverse)
+library(lubridate)
+library(readxl)
+library(writexl)
+library(janitor)
+
+```
+
+Now, I am running the code to load the dataframe. 
+
+```{r}
+
+impeach <- readRDS("impeach.rds")
+
+```
+
+
+I will take my dataset, *impeach*, and count the amount of members that were in favor of impeachment vs. not in favor. To do that, I first *group_by* for the members in favor, and then I use the *summarise(n())* function to count the amount of members for each category (YES or NO). 
+
+```{r}
+
+impeach %>% 
+  group_by(for_impeachment) %>% 
+  summarise(n())
+
+# In this case, 26 members voted NO vs. 209 voted YES for impeachment 
+
+```
+
+Now, I can also include to group not only by the amount of members in favor of Trump's impeachment, but also if the district is above of below the national average for the percentage of people that graduated college. To do that, I follow the same steps as the previous code, but also I add the `pct_bachelors_compared_to_national` in the *group_by* function to count how many districts are above or below national average. 
+
+By grouping both those who are in favor and against impeachment and whether the district is above or below the national average the percentage of college graduates, I was able to summarise the count correlating both factors as showed in the table below
+
+
+```{r}
+
+impeach %>% 
+  group_by(for_impeachment, pct_bachelors_compared_to_national) %>% 
+  summarise(n())
+
+```
+
+In addition, I can also calculate the mean of something within a data frame. For that, I can take the dataset, group by only the members in favor of impeachment and find the average of college grads that were in favor of impeachment. To do that I first put the data set, *impeach*, then I *group_by* the for_impeachment row, and use the summarise function. Within the summarise function, I assigned the name *average* to become the mean of the `pct_bachelors` row (which showcases the percentage of college grads).
+
+
+```{r}
+
+
+impeach %>% 
+  group_by(for_impeachment) %>% 
+  summarise(average = mean(pct_bachelors)) 
+
+# Approx. the average 33.7% of college grads are in favor of impeachment and 27.65% are not 
+
+
+```
+Another good tool I can use is filtering out only the members who are in favor of the impeachment. Then, after filtering it, I can check how many won their 2018 election by less than 5 percentage points vs. more - which is found in the row `margin_flag_2018`. 
+
+For that, I first filter by writing the `for_impeachment` row and assigning it (==) to only equal YES results (those who are in favor of the impeachment). Then, I *group_by* the `margin_flag_2018`, which is where I can find the second part of my data. After, I use the function *summarise (n())* to find the count of members who were in favor of the impeachment *and* have won their 2018 election by 5 percentage points or less vs. more. 
+
+```{r}
+
+impeach %>% 
+  filter (for_impeachment == "YES") %>% 
+  group_by(margin_flag_2018) %>% 
+  summarise (n())
+ 
+# 17 people who were in favor of impeachment won their 2018 election by 5 points or less 
+
+```
+
+Furthermore, I can create a new column by usin the function called *mutate()*. In this case, I am creating two new columns, one that will extract the year portion of the column `date_announced` and another which will extract the month of the same column. I have also added the *filter()* function to only select those in favor of the impeachment. I am doing this to find the year and month that people in favor of the impeachment announced their support. Those columns were added as the last ones in the dataframe. 
+
+I have also assigned names for the respective functions *year()* and *month()*. 
+
+```{r}
+  
+impeach %>% 
+  filter (for_impeachment == "YES") %>% 
+  mutate(year = year(date_announced), month = month(date_announced))
+
+# 2 new columns were created to extract the year and month of the dates announced 
+
+```
+
+At last, by using the new columns created with the *mutate()* function, I can again use the *group_by* function to count how many House of Democrats during each month announced their support of impeachment. To do that, I filtered first to only count people who supported the impeachment (the data already only includes House of Democrats), and, with the mutated columns, I grouped by month and summarised the count for eaach one. 
+
+```{r}
+
+impeach %>% 
+  filter(for_impeachment == "YES") %>% 
+  mutate(year = year(date_announced), month = month(date_announced)) %>% 
+  group_by(month) %>% 
+  summarise(n())
+
+```
+
+

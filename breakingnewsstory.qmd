@@ -1,0 +1,24 @@
+---
+title: "Breaking News Story Sample"
+author: "Giovanna Lino"
+---
+
+Data: 
+
+```{r}
+
+eight_cylinder_cars <- mtcars %>% 
+  filter(cyl == 8) %>% 
+  nrow()
+
+```
+
+There are `r eight_cylinder_cars` lessons to be learned from the invasion of Ukraine. 
+
+"The election today resulted in \_\_\_ counties being won by the Republican candidate"
+
+A new page featuring a sample "breaking news story" that is approximately 250 words and which features at least two pieces of information which are generated using inline R code within your Quarto document. In other words, an example would be "The election today resulted in \_\_\_ counties being won by the Republican candidate" where the \_\_ is filled in on the fly by your inline R code. Note that to accomplish this your Quarto document will have to include the necessary R code chunks above to create the text or number objects you will insert into those spaces.
+
+\
+Note that this is an example story you are writing - it can be based off of any dataset you choose to use, either one we've used previously or another you find. All elements needed to complete the code and the narrative must be part of your Quarto document, so whatever dataset you choose will need to be imported into the file at the top, etc, and then crunched appropriately to arrive at the number.\
+To take a single value in a dataframe and convert it to a vector, you can use the pull() function if need be.

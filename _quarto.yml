@@ -15,11 +15,14 @@ website:
         text: Home
       - about.qmd
       - portfolio.qmd
-      - walkthrough.qmd
       - censusmap.qmd
       - newsstory.qmd
       - papers.qmd
       - virginiaelectionresults.qmd
+      - walkthrough_R_concept.qmd
+      - breakingnewsstory.qmd
+      
+      
       
       
 

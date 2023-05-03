@@ -12,16 +12,20 @@ about:
       href: https://github.com/giovannarlino
 ---
 
-Hi, I'm Giovanna and I'm a student at the George Washington University. I like business and finance and enjoy keeping up with fashion and italian cuisine. 
+Hi, welcome to my webiste! I'm Giovanna and I'm a student at the George Washington University. 
 
 ## Education
 
-B.S. Degree in International Business and Finance from the George Washington University 
+B.S. Degree in Business with a double concentration in International Business and Finance and a minor in Journalism and Mass Communications from the George Washington University in Washington D.C.
 
 ## Skills
 
-Reporting and Writing
+Financial analysis and valuation 
 
-Business Valuation 
+Reporting and writing 
 
-Marketing strategy 
+Inbound and Outbound Marketing Strategy 
+
+## Interests 
+
+Business podscasts, italian cuisine and fashion. 
