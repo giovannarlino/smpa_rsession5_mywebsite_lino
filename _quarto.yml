@@ -21,12 +21,8 @@ website:
       - virginiaelectionresults.qmd
       - walkthrough_R_concept.qmd
       - breakingnewsstory.qmd
-      
-      
-      
-      
-      
-
+    
+            
 
 format:
   html:
