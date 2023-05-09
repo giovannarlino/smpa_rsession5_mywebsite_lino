@@ -1,5 +1,5 @@
 ---
-title: "Breaking News Story Sample"
+title: "Breaking News Story"
 author: "Giovanna Lino"
 date: "`r format(Sys.time(), '%B %d, %Y')`"
 format:
@@ -16,7 +16,7 @@ library(tidyverse)
 library(here)
 ```
 
-```{r}
+```{r, echo=FALSE}
 
 # Loading the datasets
 counties_demographics <- readRDS(here("counties_demographics.rds"))
@@ -24,34 +24,82 @@ counties_elexresults <- readRDS(here("counties_elexresults.rds"))
 
 ```
 
-```{r}
+```{r, echo=FALSE}
+# By joining both datasets, I am grouping/summarizing to calculate the mean pct of Trump 2020 vote by counties above or below the national average for people who identify as nonwhite.  
+
+#Here is the ABOVE value
+
+suppressMessages({nonwhite_voters_average_above <- inner_join(counties_elexresults, counties_demographics) %>% 
+  group_by(pct_race_nonwhite_abovebelow_natl) %>% 
+  summarise(average_above_nonwhite = mean(pct_r_2020)) %>% 
+  filter(pct_race_nonwhite_abovebelow_natl=="ABOVE") %>% 
+  pull(average_above_nonwhite)
+
+nonwhite_voters_average_above_rounded <- round(nonwhite_voters_average_above, 1)
+
+})
+
+```
+
+```{r, echo=FALSE}
 
 # By joining both datasets, I am grouping/summarizing to calculate the mean pct of Trump 2020 vote by counties above or below the national average for people who identify as nonwhite.  
 
-nonwhite_voters_average <- inner_join(counties_elexresults, counties_demographics) %>% 
+#Here is the BELOW value
+
+suppressMessages({nonwhite_voters_average_below <- inner_join(counties_elexresults, counties_demographics) %>% 
   group_by(pct_race_nonwhite_abovebelow_natl) %>% 
-  summarise(average = mean(pct_r_2020))
+  summarise(average_below_nonwhite = mean(pct_r_2020)) %>% 
+  filter(pct_race_nonwhite_abovebelow_natl=="BELOW") %>% 
+  pull(average_below_nonwhite)
 
-nonwhite_voters_average
-
+nonwhite_voters_average_below_rounded <- round(nonwhite_voters_average_below, 1)
+})
 
 ```
 
-```{r}
+```{r, echo=FALSE}
 
 #group/summarize to calculate the mean pct of Trump 2020 vote by counties above or below the national average for college graduates (`pct_ed_college_all_abovebelow_natl`).
 
-inner_join(counties_elexresults, counties_demographics) %>% 
+#Here is the ABOVE value
+
+suppressMessages({average_pct_ed_college_all_above_natl <- inner_join(counties_elexresults, counties_demographics) %>% 
   group_by(pct_ed_college_all_abovebelow_natl) %>% 
-  summarise(average = mean(pct_r_2020))
+  summarise(average_above_college = mean(pct_r_2020)) %>% 
+  filter (pct_ed_college_all_abovebelow_natl == "ABOVE") %>% 
+  pull(average_above_college)
+
+average_pct_ed_college_all_above_natl_rounded <-  round(average_pct_ed_college_all_above_natl, 1)
+
+})
+
 ```
 
-#  \# `r nonwhite_voters_average` of Trump's voters are part of the counties above national average for people who identify as nonwhite.
+```{r, echo=FALSE}
 
-In the aftermath of the 2020 Presidential campaign, both the results of the election and the demographics of the voter pool of each county were analyzed for both the Republican candidate Donald Trump and the Democratic candidate Joe Biden. Particularly, Trump's mean percentage of votes by U.S. counties was analyzed for both the number of nonwhite voters and the number of college graduates and if they were above or below the national U.S. average.
+#group/summarize to calculate the mean pct of Trump 2020 vote by counties above or below the national average for college graduates (`pct_ed_college_all_abovebelow_natl`).
 
-It comes as a surprise that more than `r nonwhite_voters_average` of Trump's voters are part of the counties above the national average for people who identify as nonwhite, while approximately 68% of votes are part of counties below the national average for non white-identified people. Furthermore, on average, `pct_ed_college_all_abovebelow_natl` of Trump's votes come from counties with people above the national average for college graduates, versus 68% below the national average for college graduates.
+#Here is the BELOW value
 
-These results come as a surprise since it is known that the Democratic party has the majority of college graduate and nonwhite votes. Although this is still the case, the Democratic party cannot solely rely on these metrics to ensure victory since more college graduates and nonwhite voters are increasing their support for the Republican party.
+suppressMessages({average_pct_ed_college_all_below_natl <- inner_join(counties_elexresults, counties_demographics) %>% 
+  group_by(pct_ed_college_all_abovebelow_natl) %>% 
+  summarise(average_below_college = mean(pct_r_2020)) %>% 
+  filter (pct_ed_college_all_abovebelow_natl == "BELOW") %>% 
+  pull(average_below_college)
 
-This trend can be seen in states such as Texas. Some working-class Hispanics do not feel completely represented by the Democratic party in the last gubernatorial race in November, 2022. The Democratic candidate, Beto O'Rourke is a citizen of El Paso and has been called out by activists from the organization Sunrise El Paso for not supporting them in their fight against the privatization of their electric companies. The city of El Paso is not on the Texas electrical grid, allowing for the company J.P Morgan to privatize it and charge expensive bills. Representatives of Sunrise El Paso claim that O'Rourke is too much of a Central Democrat and does not want to compromise the funding of his campaign by selecting fights with big corporations.
+average_pct_ed_college_all_below_natl_rounded <-  round(average_pct_ed_college_all_below_natl, 1)
+
+})
+
+```
+
+# **`r nonwhite_voters_average_above_rounded`% of Trump's voters are part of the counties above national average for people who identify as nonwhite.**
+
+In the aftermath of the 2020 Presidential campaign, both the results of the election and the demographics of the voter pool of each county were analyzed for both the Republican candidate Donald Trump and the Democratic candidate Joe Biden. Particularly, Trump's mean percentage of votes by U.S. counties was analyzed for both the number of nonwhite voters and the number of college graduates and if they were above or below the U.S. national average.
+
+It comes as a surprise that more than `r nonwhite_voters_average_above_rounded` percent of Trump's voters are part of the counties above the national average for people who identify as nonwhite, while approximately `r nonwhite_voters_average_below_rounded` of votes are part of counties below the national average for non white-identified people. Furthermore, on average, `r average_pct_ed_college_all_above_natl_rounded` percent of Trump's votes come from counties with people above the national average for college graduates, versus `r average_pct_ed_college_all_below_natl_rounded` percent below the national average for college graduates.
+
+These results come as a surprise since it is known that the Democratic party has the majority of college graduate and nonwhite votes. Although this is still the case, the Democratic party cannot solely rely on these metrics to ensure victory since more college graduates and nonwhite voters can be switching their minds and increasing their support for the Republican party.
+
+This trend can be seen in states such as Texas. Some working-class Hispanics did not feel completely represented by the Democratic party in the last gubernatorial race in November, 2022. The Democratic candidate, Beto O'Rourke is a citizen of El Paso and has been called out by activists from the organization Sunrise El Paso for not supporting them in their fight against the privatization of their electric companies. The city of El Paso is not on the Texas electrical grid, allowing for the company J.P Morgan to privatize it and charge expensive bills. Representatives of Sunrise El Paso claim that O'Rourke is too much of a Central Democrat and does not want to compromise the funding of his campaign by selecting fights with big corporations. The midterm results showcased that O'Rourke lost to Republican candidate Greg Abbott, and that Abbott secured a good portion of votes from the Hispanic community.

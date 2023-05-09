@@ -3,7 +3,7 @@ title: "News Story"
 author: "Giovanna Lino"
 ---
 
-# Voter Suppression in Texas
+# **Voter Suppression in Texas**
 
 *September, 2022*
 
@@ -11,7 +11,7 @@ author: "Giovanna Lino"
 
    In light of Abbott's third special season in government, Trump has pressured the current Texas Governor to pursue an election audit in most of the state's counties, claiming voter fraud and irregularities in the 2020 elections. Eight and a half hours later, Abbott's administration pursued a forensic auditing process on four of the state's major counties - Collin, Dallas, Harris (Houston included), and Tarrant, showcasing the influence that Trump still has on the state's Republican party. However, the vote reassessment did not uncover any impropriety, and there is no evidence of fraud in the state during the election period. 
 
-   In response to Abbott's actions, Trump wrote a letter claiming that Texans \"do not trust (Abbott's) election system, and they want (his) leadership on this issue, which is the number one thing they care about.\"
+   In response to Abbott's actions, Trump wrote a letter claiming that Texans "do not trust (Abbott's) election system, and they want (his) leadership on this issue, which is the number one thing they care about."
 
    In September 2021, Abbott signed a senate bill (SB1), which bans 24 hour voting, drive-thru voting, and imposes difficulties on voting for mail-in-ballot, people with disabilities and marginalized groups. Those measures also protect partisan poll watchers and set limits to those who help other voters, with their commitment of swearing under oath.
 
@@ -21,7 +21,7 @@ author: "Giovanna Lino"
 
    Furthermore, The New York Times found that after the primaries held in the beginning of 2022, Harris county, the most populous county in Texas, held that "areas with large Black populations were 44 percent more likely to have ballots rejected than heavily white areas." Jen Ramos, the political expert for JOLT Action, a progressive club that works with Texan Latinos, told Newsweek that ballot rejections in El Paso, a city with 85% Latinos, was 15 percent during primaries in 2022. The implementation of SB1 has resulted in civil rights groups and democrats filing lawsuits against the new legislation claiming it as an attempt of voter suppression for marginalized communities. 
 
-   \"Instead of working on issues that actually matter, like protecting school kids from Covid or fixing our failing electrical grid, Abbott is focused on rigging our elections and implementing extreme, right-wing policies,\" said O\'Rourke to The New York Times. 
+   "Instead of working on issues that actually matter, like protecting school kids from Covid or fixing our failing electrical grid, Abbott is focused on rigging our elections and implementing extreme, right-wing policies," said O'Rourke to The New York Times. 
 
    The Gubernatorial Election of Texas in 2022 will be held with no online voter registration on Election Day; stricter ID policies especially for Latinos, communities of color, and people with disabilities, who are less likely to have an acceptable form of identification on hand; no 24 hour election period accommodation; increased limitations for voter's assistants; and stricter criminal penalties. 
 

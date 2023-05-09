@@ -36,7 +36,9 @@ With the API key,set it up in R using the following code:
 ```{r}
 # Census API key
 #Retrived from the API Link on their page 
+
 census_api_key("75fa32dac9122cf2c43fb6e5d0ed1e7ead626185")
+
 
 ```
 

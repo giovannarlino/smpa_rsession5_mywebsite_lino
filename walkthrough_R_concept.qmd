@@ -1,13 +1,16 @@
 ---
 title: " Walkthrough"
+author: "Giovanna Lino"
 format:
   html:
     self-contained: true
 ---
 
-Here, I am going to walk you through the steps of loading your packages and dataframe, and using functions such as *filter, group_by, mutate and summarise*. 
+Here, I am going to walk you through the steps of loading your packages and dataframe, and using commands such as *filter, group_by, mutate and summarise*. Then, I will also walk you through the concept of *functions* and how to create them using certain data sets.
 
-First, I am loading the data and running the code below to create a dataframe called 'impeach'. This dataframe contains a row for every House Democrat and whether the member publicly called for impeachment in the case of the *first* Trump impeachment. There are also other data included related to each politician's district. 
+# **Filter, Group_by, Mutate & Summarise**
+
+First, I am loading the data and running the code below to create a dataframe called 'impeach'. This dataframe contains a row for every House Democrat and whether the member publicly called for impeachment in the case of the *first* Trump impeachment. There are also other data included related to each politician's district.
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
@@ -21,7 +24,7 @@ library(janitor)
 
 ```
 
-Now, I am running the code to load the dataframe. 
+Now, I am running the code to load the dataframe.
 
 ```{r}
 
@@ -29,8 +32,7 @@ impeach <- readRDS("impeach.rds")
 
 ```
 
-
-I will take my dataset, *impeach*, and count the amount of members that were in favor of impeachment vs. not in favor. To do that, I first *group_by* for the members in favor, and then I use the *summarise(n())* function to count the amount of members for each category (YES or NO). 
+I will take my dataset, *impeach*, and count the amount of members that were in favor of impeachment vs. not in favor. To do that, I first *group_by* for the members in favor, and then I use the *summarise(n())* function to count the amount of members for each category (YES or NO).
 
 ```{r}
 
@@ -42,10 +44,9 @@ impeach %>%
 
 ```
 
-Now, I can also include to group not only by the amount of members in favor of Trump's impeachment, but also if the district is above of below the national average for the percentage of people that graduated college. To do that, I follow the same steps as the previous code, but also I add the `pct_bachelors_compared_to_national` in the *group_by* function to count how many districts are above or below national average. 
+Now, I can also include to group not only by the amount of members in favor of Trump's impeachment, but also if the district is above of below the national average for the percentage of people that graduated college. To do that, I follow the same steps as the previous code, but also I add the `pct_bachelors_compared_to_national` in the *group_by* function to count how many districts are above or below national average.
 
 By grouping both those who are in favor and against impeachment and whether the district is above or below the national average the percentage of college graduates, I was able to summarise the count correlating both factors as showed in the table below
-
 
 ```{r}
 
@@ -56,7 +57,6 @@ impeach %>%
 ```
 
 In addition, I can also calculate the mean of something within a data frame. For that, I can take the dataset, group by only the members in favor of impeachment and find the average of college grads that were in favor of impeachment. To do that I first put the data set, *impeach*, then I *group_by* the for_impeachment row, and use the summarise function. Within the summarise function, I assigned the name *average* to become the mean of the `pct_bachelors` row (which showcases the percentage of college grads).
-
 
 ```{r}
 
@@ -69,9 +69,10 @@ impeach %>%
 
 
 ```
-Another good tool I can use is filtering out only the members who are in favor of the impeachment. Then, after filtering it, I can check how many won their 2018 election by less than 5 percentage points vs. more - which is found in the row `margin_flag_2018`. 
 
-For that, I first filter by writing the `for_impeachment` row and assigning it (==) to only equal YES results (those who are in favor of the impeachment). Then, I *group_by* the `margin_flag_2018`, which is where I can find the second part of my data. After, I use the function *summarise (n())* to find the count of members who were in favor of the impeachment *and* have won their 2018 election by 5 percentage points or less vs. more. 
+Another good tool I can use is filtering out only the members who are in favor of the impeachment. Then, after filtering it, I can check how many won their 2018 election by less than 5 percentage points vs. more - which is found in the row `margin_flag_2018`.
+
+For that, I first filter by writing the `for_impeachment` row and assigning it (==) to only equal YES results (those who are in favor of the impeachment). Then, I *group_by* the `margin_flag_2018`, which is where I can find the second part of my data. After, I use the function *summarise (n())* to find the count of members who were in favor of the impeachment *and* have won their 2018 election by 5 percentage points or less vs. more.
 
 ```{r}
 
@@ -84,9 +85,9 @@ impeach %>%
 
 ```
 
-Furthermore, I can create a new column by usin the function called *mutate()*. In this case, I am creating two new columns, one that will extract the year portion of the column `date_announced` and another which will extract the month of the same column. I have also added the *filter()* function to only select those in favor of the impeachment. I am doing this to find the year and month that people in favor of the impeachment announced their support. Those columns were added as the last ones in the dataframe. 
+Furthermore, I can create a new column by usin the function called *mutate()*. In this case, I am creating two new columns, one that will extract the year portion of the column `date_announced` and another which will extract the month of the same column. I have also added the *filter()* function to only select those in favor of the impeachment. I am doing this to find the year and month that people in favor of the impeachment announced their support. Those columns were added as the last ones in the dataframe.
 
-I have also assigned names for the respective functions *year()* and *month()*. 
+I have also assigned names for the respective functions *year()* and *month()*.
 
 ```{r}
   
@@ -98,7 +99,7 @@ impeach %>%
 
 ```
 
-At last, by using the new columns created with the *mutate()* function, I can again use the *group_by* function to count how many House of Democrats during each month announced their support of impeachment. To do that, I filtered first to only count people who supported the impeachment (the data already only includes House of Democrats), and, with the mutated columns, I grouped by month and summarised the count for eaach one. 
+At last, by using the new columns created with the *mutate()* function, I can again use the *group_by* function to count how many House of Democrats during each month announced their support of impeachment. To do that, I filtered first to only count people who supported the impeachment (the data already only includes House of Democrats), and, with the mutated columns, I grouped by month and summarised the count for eaach one.
 
 ```{r}
 
@@ -110,4 +111,131 @@ impeach %>%
 
 ```
 
+# **Functions**
 
+Now, I am going to walk you through the concepts of functions and how to create them. First, I create a function that will return the sum of 2 numbers by assigning a name to my function. In this case, I assigned 'sum_two_numbers' to my function of number x and y. Then, I put 'return' to add both values. At last, I add the assign the name 'result' to my sum_two_numbers(5,7) and print the result.
+
+```{r}
+
+sum_two_numbers <- function(x,y){
+  
+return(x + y)
+  
+}
+
+result <- sum_two_numbers (5,7)
+print(result)
+
+```
+
+Now, I can create a function that will return the mean of a list of numbers fed to it. I use the same step as above but instead of summing values, I am generating their mean. The 'list' portion refers to the numbers I assigned in the bottom of the code.
+
+```{r}
+
+mean_of_numbers <- function(list){
+  return(mean(list))
+}
+
+list <- c(1,4,6,8,10)
+result <- mean_of_numbers(list)
+print(result)
+
+
+```
+
+Now, I expand on the function I made above, and instead of just returning the mean number alone, I have it return a sentence. \*"The mean is \_\_\_"\*. (Where the blank is the mean.)
+
+I followed the same steps as above by assigning a name to my function and including a list of numbers in the function. After, I just added the text I want generated by using the 'return' and the 'paste0' commands.
+
+```{r}
+mean_of_numbers_with_text <- function(list){
+  return(paste0("The mean is ", mean_of_numbers(list)))
+}
+
+list <- c(1,4,6,8,10)
+result <- mean_of_numbers(list)
+print(result)
+
+```
+
+Another option I did was to create a code that showcases the mean with text. I added a list of numbers and generate its mean with the 'mean' command. With the 'paste0', I use the text I want printed and the mean I want from the respective list.
+
+```{r}
+numberlist <- c(12,14,15)
+
+resultingmean <- mean(numberlist)
+
+paste0("The mean is ", resultingmean)
+```
+
+Now, we'll use the `flights` dataset from the package `nycflights13`. It contains records of individual airline flights departing at New York's three metro airports, JFK, LaGuardia (LGA) and Newark (EWR). Run the following chunk to load the data.
+
+```{r}
+install.packages("nycflights13")
+```
+
+```{r}
+#load the data to use for the rest of the assignment questions
+flights <- nycflights13::flights
+
+head(flights)
+```
+
+Using the `flights` dataset, I created a function that filters the data frame to only include records from a single originating airport (column name `origin`).
+
+In other words, it should let you enter an origin airport and return all the records from just that airport. Then, I create the function I want by assigning a name to it and return the result. In this case I assigned the name 'filter_flights_by_origin'.
+
+```{r}
+#creating the function
+
+airportname <- "LGA"
+
+flights %>% 
+  filter(origin == airportname)
+
+
+filter_flights_by_origin <- function(airportname) {
+  result <- flights %>% 
+  filter(origin == airportname)
+  
+  return(result)
+}
+```
+
+Now, I use the assigned name to only return the values from the origin I selected.
+
+```{r}
+#returning values 
+
+filter_flights_by_origin("LGA")
+
+
+```
+
+Now, using the `flights` data set, I created a function that:
+
+First, filters the data frame to only include records from a single originating airport (column name `origin`)...
+
+```{r}
+airportname <- "LGA"
+
+flights %>% 
+  filter(origin == airportname) %>% 
+  count(carrier)
+```
+
+... And then ,aggregates the results by airline (`carrier`) to show how many flights each airline has from that airport. Here, I used the filter, count, and function commands. I combined all of the steps above into one. A different command here is the 'head' command that shows the top value of the list since I included the #1 inside the brackets.
+
+```{r}
+count_byairline_for_one_airport <- function(airportname) {
+  result <- flights %>% 
+    filter(origin == airportname) %>% 
+    count(carrier, sort = TRUE) %>% #sort = TRUE showcases from the highest value to the lowest 
+    head(1) #for the top value of the list 
+  
+  return(result)
+}
+
+count_byairline_for_one_airport("EWR")
+
+```

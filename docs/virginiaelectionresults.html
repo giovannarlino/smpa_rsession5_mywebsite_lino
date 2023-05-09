@@ -4040,7 +4040,7 @@ vertical-align: -.125em;
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./breakingnewsstory.html">
- <span class="menu-text">Breaking News Story Sample</span></a>
+ <span class="menu-text">Breaking News Story</span></a>
   </li>  
 </ul>
               <div id="quarto-search" class title="Search"></div>
@@ -4057,14 +4057,14 @@ vertical-align: -.125em;
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#getting-2020-presidential-results" id="toc-getting-2020-presidential-results" class="nav-link active" data-scroll-target="#getting-2020-presidential-results">Getting 2020 Presidential results</a></li>
-  <li><a href="#getting-2021-virginia-governor-results" id="toc-getting-2021-virginia-governor-results" class="nav-link" data-scroll-target="#getting-2021-virginia-governor-results">Getting 2021 Virginia governor results</a>
+  <li><a href="#getting-2020-presidential-results" id="toc-getting-2020-presidential-results" class="nav-link active" data-scroll-target="#getting-2020-presidential-results"><strong>Getting 2020 Presidential results</strong></a></li>
+  <li><a href="#getting-2021-virginia-governor-results" id="toc-getting-2021-virginia-governor-results" class="nav-link" data-scroll-target="#getting-2021-virginia-governor-results"><strong>Getting 2021 Virginia Governor results</strong></a>
   <ul class="collapse">
-  <li><a href="#reshaping" id="toc-reshaping" class="nav-link" data-scroll-target="#reshaping">Reshaping</a></li>
+  <li><a href="#reshaping" id="toc-reshaping" class="nav-link" data-scroll-target="#reshaping"><strong>Reshaping</strong></a></li>
   </ul></li>
-  <li><a href="#putting-things-together---joining" id="toc-putting-things-together---joining" class="nav-link" data-scroll-target="#putting-things-together---joining">Putting things together - joining</a>
+  <li><a href="#putting-things-together---joining" id="toc-putting-things-together---joining" class="nav-link" data-scroll-target="#putting-things-together---joining"><strong>Putting things together - joining</strong></a>
   <ul class="collapse">
-  <li><a href="#comparing-gov-vs.-president-results" id="toc-comparing-gov-vs.-president-results" class="nav-link" data-scroll-target="#comparing-gov-vs.-president-results">Comparing gov vs. president results</a></li>
+  <li><a href="#comparing-gov-vs.-president-results" id="toc-comparing-gov-vs.-president-results" class="nav-link" data-scroll-target="#comparing-gov-vs.-president-results"><strong>Comparing gov vs. president results</strong></a></li>
   </ul></li>
   <li><a href="#my-analysis" id="toc-my-analysis" class="nav-link" data-scroll-target="#my-analysis"><strong>My Analysis</strong></a></li>
   <li><a href="#comparing-virginia-gov-vs.-president-victory" id="toc-comparing-virginia-gov-vs.-president-victory" class="nav-link" data-scroll-target="#comparing-virginia-gov-vs.-president-victory">Comparing Virginia Gov vs. President Victory</a></li>
@@ -4099,7 +4099,7 @@ vertical-align: -.125em;
 </header>
 
 <section id="getting-2020-presidential-results" class="level1">
-<h1>Getting 2020 Presidential results</h1>
+<h1><strong>Getting 2020 Presidential results</strong></h1>
 <p>Data available here: <a href="https://historical.elections.virginia.gov/elections/view/144567/" class="uri">https://historical.elections.virginia.gov/elections/view/144567/</a></p>
 <p>A little column cleaning and we’ll load in the data file.</p>
 <div class="cell">
@@ -4199,7 +4199,7 @@ num (3): biden, trump, total_votes_2021_prez
 </div>
 </section>
 <section id="getting-2021-virginia-governor-results" class="level1">
-<h1>Getting 2021 Virginia governor results</h1>
+<h1><strong>Getting 2021 Virginia Governor results</strong></h1>
 <p>Data now available from the state here: <a href="https://historical.elections.virginia.gov/elections/view/147466" class="uri">https://historical.elections.virginia.gov/elections/view/147466</a>.</p>
 <p>After the election and for few years after, was only available in JSON format.</p>
 <p><a href="https://results.elections.virginia.gov/vaelections/2021%20November%20General/Json/Governor.json" class="uri">https://results.elections.virginia.gov/vaelections/2021%20November%20General/Json/Governor.json</a></p>
@@ -4285,7 +4285,7 @@ num (3): biden, trump, total_votes_2021_prez
 <p>What’s the issue we may have here?</p>
 <p>This is actually tidy data which is good - but for comparing the candidates we’d want them on the same row.</p>
 <section id="reshaping" class="level2">
-<h2 class="anchored" data-anchor-id="reshaping">Reshaping</h2>
+<h2 class="anchored" data-anchor-id="reshaping"><strong>Reshaping</strong></h2>
 <p>Enter pivot_wider().</p>
 <p>We’ll get rid of everything we don’t need first.</p>
 <div class="cell">
@@ -4408,7 +4408,7 @@ num (3): biden, trump, total_votes_2021_prez
 </section>
 </section>
 <section id="putting-things-together---joining" class="level1">
-<h1>Putting things together - joining</h1>
+<h1><strong>Putting things together - joining</strong></h1>
 <p>Now we want to actually join things up.</p>
 <p>Can we do that? Let’s check out our two tables</p>
 <div class="cell">
@@ -4531,7 +4531,7 @@ num (3): biden, trump, total_votes_2021_prez
 </div>
 <p>Alright! It worked.</p>
 <section id="comparing-gov-vs.-president-results" class="level2">
-<h2 class="anchored" data-anchor-id="comparing-gov-vs.-president-results">Comparing gov vs. president results</h2>
+<h2 class="anchored" data-anchor-id="comparing-gov-vs.-president-results"><strong>Comparing gov vs. president results</strong></h2>
 <p>Now that things are join, let’s actually go ahead and start making columns to compare the two elections and how the candidates did this time compared with last time.</p>
 <p>Where should we go from here….? Give it a shot…</p>
 <div class="cell">
@@ -4926,7 +4926,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb60-34"><a href="#cb60-34" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb60-35"><a href="#cb60-35" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb60-36"><a href="#cb60-36" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb60-37"><a href="#cb60-37" aria-hidden="true" tabindex="-1"></a><span class="fu"># Getting 2020 Presidential results</span></span>
+<span id="cb60-37"><a href="#cb60-37" aria-hidden="true" tabindex="-1"></a><span class="fu"># **Getting 2020 Presidential results**</span></span>
 <span id="cb60-38"><a href="#cb60-38" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb60-39"><a href="#cb60-39" aria-hidden="true" tabindex="-1"></a>Data available here: <span class="ot">&lt;https://historical.elections.virginia.gov/elections/view/144567/&gt;</span></span>
 <span id="cb60-40"><a href="#cb60-40" aria-hidden="true" tabindex="-1"></a></span>
@@ -4978,7 +4978,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb60-96"><a href="#cb60-96" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb60-97"><a href="#cb60-97" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb60-98"><a href="#cb60-98" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb60-99"><a href="#cb60-99" aria-hidden="true" tabindex="-1"></a><span class="fu"># Getting 2021 Virginia governor results</span></span>
+<span id="cb60-99"><a href="#cb60-99" aria-hidden="true" tabindex="-1"></a><span class="fu"># **Getting 2021 Virginia Governor results**</span></span>
 <span id="cb60-100"><a href="#cb60-100" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb60-101"><a href="#cb60-101" aria-hidden="true" tabindex="-1"></a>Data now available from the state here: <span class="ot">&lt;https://historical.elections.virginia.gov/elections/view/147466&gt;</span>.</span>
 <span id="cb60-102"><a href="#cb60-102" aria-hidden="true" tabindex="-1"></a></span>
@@ -5043,7 +5043,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb60-169"><a href="#cb60-169" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb60-170"><a href="#cb60-170" aria-hidden="true" tabindex="-1"></a>This is actually tidy data which is good - but for comparing the candidates we&#39;d want them on the same row.</span>
 <span id="cb60-171"><a href="#cb60-171" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb60-172"><a href="#cb60-172" aria-hidden="true" tabindex="-1"></a><span class="fu">## Reshaping</span></span>
+<span id="cb60-172"><a href="#cb60-172" aria-hidden="true" tabindex="-1"></a><span class="fu">## **Reshaping**</span></span>
 <span id="cb60-173"><a href="#cb60-173" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb60-174"><a href="#cb60-174" aria-hidden="true" tabindex="-1"></a>Enter pivot_wider().</span>
 <span id="cb60-175"><a href="#cb60-175" aria-hidden="true" tabindex="-1"></a></span>
@@ -5113,7 +5113,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb60-249"><a href="#cb60-249" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb60-250"><a href="#cb60-250" aria-hidden="true" tabindex="-1"></a>Perfect. Problem solved.</span>
 <span id="cb60-251"><a href="#cb60-251" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb60-252"><a href="#cb60-252" aria-hidden="true" tabindex="-1"></a><span class="fu"># Putting things together - joining</span></span>
+<span id="cb60-252"><a href="#cb60-252" aria-hidden="true" tabindex="-1"></a><span class="fu"># **Putting things together - joining**</span></span>
 <span id="cb60-253"><a href="#cb60-253" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb60-254"><a href="#cb60-254" aria-hidden="true" tabindex="-1"></a>Now we want to actually join things up.</span>
 <span id="cb60-255"><a href="#cb60-255" aria-hidden="true" tabindex="-1"></a></span>
@@ -5189,7 +5189,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb60-339"><a href="#cb60-339" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb60-340"><a href="#cb60-340" aria-hidden="true" tabindex="-1"></a>Alright! It worked.</span>
 <span id="cb60-341"><a href="#cb60-341" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb60-342"><a href="#cb60-342" aria-hidden="true" tabindex="-1"></a><span class="fu">## Comparing gov vs. president results</span></span>
+<span id="cb60-342"><a href="#cb60-342" aria-hidden="true" tabindex="-1"></a><span class="fu">## **Comparing gov vs. president results**</span></span>
 <span id="cb60-343"><a href="#cb60-343" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb60-344"><a href="#cb60-344" aria-hidden="true" tabindex="-1"></a>Now that things are join, let&#39;s actually go ahead and start making columns to compare the two elections and how the candidates did this time compared with last time.</span>
 <span id="cb60-345"><a href="#cb60-345" aria-hidden="true" tabindex="-1"></a></span>
